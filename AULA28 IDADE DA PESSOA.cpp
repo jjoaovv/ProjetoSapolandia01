@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//precisa melhorar sistema de nascimento pra dar a opção do passado e do futuro de acorodo com a data que o individuo colocar//
+//precisa melhorar sistema de if's para quando o programa entar em um 'lop' do "if" os outros continuarem funcionando //
 
-// a = ano atual | an = ano de nascimenrto | id = idade da pessoa
-int a, an, id, X;
+//a = ano atual |an = ano de nascimenrto |id = idade da pessoa |Y = esta guardando id para o 1Â° "IF" |X = esta guardando "a" para o 2Â° "IF"
+int a, an, id, X, Y;
 
 int main() 
 {
@@ -15,10 +15,11 @@ int main()
 	
 	id = a - an; 	 
 	X= a;
-	 // Esse "IF" é para a configuração do ano de nascimento//
-	if (an > 2020 || an < 1920)
+	Y= id;
+	 // Esse 1Â°"IF" Ã© para a configuraÃ§Ã£o do ano de nascimento//
+	if (an >= 2015)
 		{
-			printf("Por um acaso o senhor veio do futuro?? \n ");
+			printf("Voce eH muito novo!!! \n ");
 			printf(" RECOLOQUE OS DADOS \n");
 			printf("----------------------- \n");
 			
@@ -26,8 +27,20 @@ int main()
 			scanf("%d", &a);
 			printf("Em que ano voce nasceu? ");
 			scanf("%d", &an); 
+			id = a - an; 
+		}else if(an < 1920){
+			printf(" Se num tem %d anos!!!Num eh possivel!!! \n ", Y);
+			printf(" RECOLOQUE OS DADOS \n");
+			printf("----------------------- \n");
+			
+			printf ("Em que ano estamos? ");
+			scanf("%d", &a);
+			printf("Em que ano voce nasceu? ");
+			scanf("%d", &an); 
+			id = a - an;
 		}
-	// Esse "IF é para a configuração do anoa tual //
+	
+	// Esse 2Â°"IF Ã© para a configuraÃ§Ã£o do ano atual //
 	if (a > 2020 || a < 1920)
 		{
 			a = 2020;
@@ -36,7 +49,7 @@ int main()
 			printf (" Por isso o ano foi reajustado para 2020 \n");
 			// Exit(1);  << Para finalizar o codigo //
 		}
- 	// Esse "IF" and "Else" é para a configuração de autorização de idade
+ 	// Esse 3Â°"IF" and "Else" Ã© para a configuraÃ§Ã£o de autorizaÃ§Ã£o de idade
 	if(id > 18 )
 	{ 
 	 	 	printf("voce tem %d", id );
